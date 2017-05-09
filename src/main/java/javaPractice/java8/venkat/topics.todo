@@ -1,0 +1,54 @@
+Get a Taste of Lambdas and Get Addicted to Streams
+Venkat Subramaniam
+Email: venkats@agiledeveloper.com
+Twitter: @venkat_s
+http://www.agiledeveloper.com download link
+
+✓What's a lambda expression?
+✓Using Lambda expression
+✓How it fits into the Java Philosophy
+✓Lambdas under the hood
+✓Transforming iterations
+	✓ from imperative
+	✓ to functional
+✓A peek at Method references
+  ✓parameter as an argument
+  ✓parameter as an argument to a static method
+  ✓parameter as a target
+  ✓two parameters as arguments
+  ✓two parameters, one as target the other as an arguemnt
+✓Function Composition
+✓An example
+✓Parallelizing it
+✓Lambdas are cool, but streams are awesome
+✓Stream as abstraction
+✓Non mutating pipeline
+✓Revisiting stream operations
+ ✓ filter
+ ✓ map
+ ✓ reduce
+ ✓ specialized reduces
+ ✓ sum
+✓ collect 
+  ✓ to list
+  ✓ to set
+  ✓ to map
+✓groupingBy
+✓groupingBy and mapping
+✓Efficiency of streams
+✓Lazy evaluations
+✓characteristics of a stream: sized, ordered, distinct, sorted
+✓infinite streams
+
+http://www.agiledeveloper.com download link
+
+
+Detail explanation of map and reduce.
+https://github.com/winterbe/java8-tutorial#default-methods-for-interfaces
+https://www.sitepoint.com/java-8-streams-filter-map-reduce/
+http://www.oracle.com/technetwork/articles/java/ma14-java-se-8-streams-2177646.html
+http://winterbe.com/posts/2015/03/25/java8-examples-string-number-math-files/
+
+http://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/
+
+

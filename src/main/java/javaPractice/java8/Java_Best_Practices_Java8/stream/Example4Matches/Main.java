@@ -1,0 +1,28 @@
+package javaPractice.java8.Java_Best_Practices_Java8.stream.Example4Matches;
+
+import java.util.List;
+
+public class Main {
+	public static void main(String[] args) {
+		List<Person> list = Person.createShortList();
+
+		// there are 3 people with age 16,17,18
+
+		// anyone having age 18+
+		boolean ret = list.stream().anyMatch(p -> p.getAge() > 18);
+		System.out.println(ret);// false
+
+		// anyone 17+
+		ret = list.stream().anyMatch(p -> p.getAge() > 17);
+		System.out.println(ret);// true
+
+		// everyone 10+
+		ret = list.stream().allMatch(p -> p.getAge() > 10);
+		System.out.println(ret);// true
+
+		// how many 16+
+		long val = list.stream().filter(p -> p.getAge() > 16).count();
+		System.out.println(val);// 2
+
+	}
+}

@@ -1,0 +1,60 @@
+Thinking in Functional Style
+Venkat Subramaniam
+Email: venkats@agiledeveloper.com
+Twitter: @venkat_s
+http://www.agiledeveloper.com download link
+  
+Topics:
+- Why Functional Programming?
+	-Growth of computer applications
+	-Accidental vs. inherent complexity
+	-Power and perils of OO and mutable state
+	-Emergence of multiple cores
+- What's wrong with mutable state?	
+  - Error prone
+  - Hard to reason
+  - Hard to make concurrent	
+- What's Functional Programming?
+ - What's old is new again
+ - Assignment-less programming	 
+ - Immutable state
+ - Functions as first class citizens
+    - Higher-Order functions
+ - Functions with no side-effect
+-What are the benefits?
+-Functional Style vs Purely functional
+-What does it really mean to thinking_in_functional_style in functional style?
+	-state transformation instead of state mutation
+-Imperative vs. declarative
+- Declarative is expressive
+  - Tell me what, not how
+- Find a person in a collection
+  - imperative
+  - declarative
+- Double even values in a collection in Java—imperative style
+- Double even values in a collection in Java—declarative style
+-Imperative vs Declarative
+  - how               what
+  - mutate	          transform
+  - side-effect       pure
+  - pass objects      pass functions also
+  - hard to compose   functional composition
+- Programming with higher order functions
+  - total all values
+  - total select values - violation of DRY
+  - removing duplication with the strategy pattern
+- lambdas vs. closures
+  - lexical scoping
+  - carrying of state
+- Rethinking how we thinking_in_functional_style
+  - find if a number if prime
+  - imperative
+  - functional
+- Immutability and pure functions make functional programming
+- At the heart of functional programming is composition and laziness
+- Function composition
+- Lazy evaluations
+  - Find the first prime number greater than 100, where it's sqrt greater than 20
+	
+You can download this topics list and thinking_in_functional_style examples from:
+	http://www.agiledeveloper.com	 - downloads link
