@@ -1,4 +1,4 @@
-package javaPractice.algo.graph.array;
+package javaPractice.algo.array;
 
 import java.util.Arrays;
 

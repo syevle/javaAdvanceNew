@@ -1,4 +1,4 @@
-package javaPractice.algo.graph.array;
+package javaPractice.algo.array;
 
 /**
  * Created by Santosh on 5/8/17.

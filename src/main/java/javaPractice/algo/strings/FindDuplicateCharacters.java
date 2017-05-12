@@ -1,10 +1,8 @@
-package javaPractice.algo.graph.strings;
+package javaPractice.algo.strings;
 
 /**
  * Created by Santosh on 5/8/17.
  */
-
-import java.util.HashMap;
 
 
 /**

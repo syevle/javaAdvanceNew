@@ -1,4 +1,4 @@
-package javaPractice.algo.graph.strings;
+package javaPractice.algo.strings;
 
 /**
  * Check if two given strings are isomorphic to each other

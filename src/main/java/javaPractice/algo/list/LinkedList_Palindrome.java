@@ -1,4 +1,4 @@
-package javaPractice.algo.graph.list;
+package javaPractice.algo.list;
 
 /**
  * Given a linked list handling string data, check to see whether data is palindrome or not?
@@ -17,7 +17,6 @@ package javaPractice.algo.graph.list;
  // Java Program to check if a given linked list of strings
  // form a palindrome
  */
-import java.util.Scanner;
 
 // Linked List node
 class Node
