@@ -7,11 +7,13 @@ import java.util.List;
 public class Test {
     public static void main(String sa[]){
 
-        List<String> temp = new ArrayList<>();
-        temp.add("Santosh");
-        temp.add("Santosh");
-        temp.remove("nitin");
-        System.out.println(temp.size());
+        String s1 = "One";
+        String s2 = "Two";
+        String s3 = s1.toUpperCase();
+
+        System.out.println(s1);
+        System.out.println(s3);
+
     }
 
 
