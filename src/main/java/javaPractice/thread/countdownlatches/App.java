@@ -42,7 +42,9 @@ public class App {
         }
 
         try {
+            System.out.println("before latch.await().");
             latch.await();
+            System.out.println("after latch.await().");
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -57,6 +59,7 @@ public class App {
 /*
 Started.
 Started.
+before latch.await().
 Started.
 Started.
 Started.
@@ -65,6 +68,7 @@ Started.
 Started.
 Started.
 Started.
+after latch.await().
 Completed.
 
  */
