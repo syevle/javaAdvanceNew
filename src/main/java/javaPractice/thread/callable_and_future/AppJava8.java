@@ -15,14 +15,11 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 
-public class App8 {
+public class AppJava8 {
 
     public static void main(String[] args) {
         ExecutorService executor = Executors.newCachedThreadPool();
-
-        Future<Integer> future = executor.submit(new Callable<Integer>() {
-
-            public Integer call() throws Exception {
+        Future<Integer> future = executor.submit(() -> {
                 Random random = new Random();
                 int duration = random.nextInt(4000);
 
@@ -41,7 +38,6 @@ public class App8 {
                 System.out.println("Finished.");
 
                 return duration;
-            }
 
         });
 
