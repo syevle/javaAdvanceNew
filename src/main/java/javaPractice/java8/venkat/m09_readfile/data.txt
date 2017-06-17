@@ -1,0 +1,8 @@
+Hi
+I am boy
+2
+44
+
+
+56
+In the above example code we are using the Files.lines() function line by line and then prints the data on the console.

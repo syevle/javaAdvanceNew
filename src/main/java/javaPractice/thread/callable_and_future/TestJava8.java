@@ -15,31 +15,12 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 
-public class App {
+public class TestJava8 {
 
     public static void main(String[] args) {
         ExecutorService executor = Executors.newCachedThreadPool();
-        Future<Integer> future = executor.submit(() -> {
-                Random random = new Random();
-                int duration = random.nextInt(4000);
 
-                if(duration > 2000) {
-                    throw new IOException("Sleeping for too long.");
-                }
-
-                System.out.println("Starting ...");
-
-                try {
-                    Thread.sleep(duration);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-                System.out.println("Finished.");
-
-                return duration;
-
-        });
+        Future<String> future = executor.submit(() -> "Hello World");
 
         executor.shutdown();
 
