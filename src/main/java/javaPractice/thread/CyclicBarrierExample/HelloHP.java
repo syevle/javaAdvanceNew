@@ -1,7 +1,12 @@
 package javaPractice.thread.CyclicBarrierExample;
 
+import javaPractice.thread.ConcurrentUtils;
+
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 /*
 Java Program to demonstrate how to use CyclicBarrier, Its used when number of threads * needs to wait for each other
@@ -12,6 +17,7 @@ before starting again.
 
 public class HelloHP {
     public static void main(String args[]) throws InterruptedException, BrokenBarrierException {
+//        ExecutorService executor = Executors.newFixedThreadPool(4);
         CyclicBarrier barrier = new CyclicBarrier(4);
         Party first = new Party(1000, barrier, "PARTY-1");
         Party second = new Party(2000, barrier, "PARTY-2");
@@ -21,9 +27,17 @@ public class HelloHP {
         second.start();
         third.start();
         fourth.start();
+//        executor.submit(first);
+//        executor.submit(second);
+//        executor.submit(third);
+//        executor.submit(fourth);
+
+//        ConcurrentUtils.stop(executor);
         System.out.println(Thread.currentThread().getName() + " has finished");
     }
 }
+
+
 
 class Party extends Thread {
     private int duration;

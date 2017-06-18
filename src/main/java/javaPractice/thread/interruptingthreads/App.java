@@ -20,10 +20,27 @@ public class App {
 
         ExecutorService exec = Executors.newCachedThreadPool();
 
-        Future<?> fu = exec.submit(new Callable<Void>() {
+//        Future<?> fu = exec.submit(new Callable<Void>() {
+//
+//            @Override
+//            public Void call() throws Exception {
+//                Random ran = new Random();
+//
+//                for (int i = 0; i < 1E8; i++) {
+//
+//                    if (Thread.currentThread().isInterrupted()) {
+//                        System.out.println("Interrupted!");
+//                        break;
+//                    }
+//
+//                    Math.sin(ran.nextDouble());
+//                }
+//                return null;
+//            }
+//
+//        });
 
-            @Override
-            public Void call() throws Exception {
+        Future<?> fu = exec.submit(()-> {
                 Random ran = new Random();
 
                 for (int i = 0; i < 1E8; i++) {
@@ -36,10 +53,7 @@ public class App {
                     Math.sin(ran.nextDouble());
                 }
                 return null;
-            }
-
-        });
-
+            });
         exec.shutdown();
 
 
