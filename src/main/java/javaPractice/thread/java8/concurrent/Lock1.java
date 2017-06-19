@@ -43,3 +43,8 @@ public class Lock1 {
     }
 
 }
+
+/*
+OutPut :
+10000
+ */

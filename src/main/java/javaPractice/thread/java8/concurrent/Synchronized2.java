@@ -37,3 +37,8 @@ public class Synchronized2 {
     }
 
 }
+
+/*
+output :
+10000
+ */
