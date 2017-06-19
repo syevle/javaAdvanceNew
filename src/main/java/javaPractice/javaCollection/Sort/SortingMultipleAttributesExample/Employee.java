@@ -1,0 +1,56 @@
+package javaPractice.javaCollection.Sort.SortingMultipleAttributesExample;
+
+/**
+ * Created by Santosh on 6/19/17.
+ */
+public class Employee {
+    private String name;
+    private String jobTitle;
+    private int age;
+    private Integer salary;
+
+    public Employee(String name, String jobTitle, int age, int salary) {
+        this.name = name;
+        this.jobTitle = jobTitle;
+        this.age = age;
+        this.salary = salary;
+    }
+
+    // getters and setters
+
+    public String toString() {
+        return String.format("%s\t%s\t%d\t%d", name, jobTitle, age, salary);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getJobTitle() {
+        return jobTitle;
+    }
+
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public Integer getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Integer salary) {
+        this.salary = salary;
+    }
+}
