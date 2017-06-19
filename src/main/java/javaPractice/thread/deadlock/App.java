@@ -17,14 +17,6 @@ public class App {
     public static void main(String[] args) throws Exception {
         ExecutorService executor = Executors.newFixedThreadPool(2);
         final Runner runner = new Runner();
-        Runnable r1 = ()-> {
-            try {
-                runner.firstThread();
-            } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        };
 //        Thread t1 = new Thread(new Runnable() {
 //            public void run() {
 //                try {
@@ -47,9 +39,18 @@ public class App {
 //            }
 //        });
 
-        Runnable r2 = ()-> {
+        Runnable r1 = ()-> {
             try {
                 runner.firstThread();
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        };
+
+        Runnable r2 = ()-> {
+            try {
+                runner.secondThread();
             } catch (InterruptedException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -74,3 +75,9 @@ public class App {
     }
 
 }
+
+/*
+Account 1 balance: 13114
+Account 2 balance: 6886
+Total balance: 20000
+ */

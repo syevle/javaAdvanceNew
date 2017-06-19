@@ -1,9 +1,11 @@
 package javaPractice.thread.producerconsumer;
 
+import javaPractice.thread.ConcurrentUtils;
+
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * BlockingQueue amazingly simplifies implementation of Producer-Consumer design pattern by providing outofbox
@@ -13,10 +15,10 @@ import java.util.logging.Logger;
  * is optionally bounded. here is a complete code example of Producer Consumer pattern with BlockingQueue.
  * Compare it with classic wait notify code, its much simpler and easy to understand.
  */
-public class ProducerConsumerPattern {
+public class ProducerConsumerPattern8 {
 
     public static void main(String args[]){
-
+        ExecutorService executor = Executors.newFixedThreadPool(2);
         //Creating shared object
         BlockingQueue sharedQueue = new LinkedBlockingQueue();
 
@@ -25,8 +27,10 @@ public class ProducerConsumerPattern {
         Thread consThread = new Thread(new Consumer(sharedQueue));
 
         //Starting producer and Consumer thread
-        prodThread.start();
-        consThread.start();
+        executor.submit(prodThread);
+        executor.submit(consThread);
+
+        ConcurrentUtils.stop(executor);
     }
 
 }
