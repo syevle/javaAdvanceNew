@@ -42,3 +42,11 @@ public class Lock5 {
     }
 
 }
+/*
+Optimistic Lock Valid: true
+Write Lock acquired
+Optimistic Lock Valid: false
+Write done
+Optimistic Lock Valid: false
+
+ */

@@ -1,5 +1,7 @@
 package javaPractice.thread.java8.concurrent;
 
+import javaPractice.thread.ConcurrentUtils;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.locks.ReentrantLock;
@@ -34,3 +36,9 @@ public class Lock2 {
     }
 
 }
+
+/*
+Locked: true
+Held by me: false
+Lock acquired: false
+ */

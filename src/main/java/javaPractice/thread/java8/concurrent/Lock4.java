@@ -44,3 +44,8 @@ public class Lock4 {
     }
 
 }
+
+/*
+bar
+bar
+ */

@@ -1,6 +1,7 @@
 package javaPractice.thread.ParallelTasks;
 
-import javaPractice.thread.java8.concurrent.ConcurrentUtils;
+
+import javaPractice.thread.ConcurrentUtils;
 
 import java.util.ArrayList;
 import java.util.List;

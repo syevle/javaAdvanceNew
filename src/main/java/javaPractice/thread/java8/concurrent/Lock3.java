@@ -45,3 +45,8 @@ public class Lock3 {
     }
 
 }
+
+/*
+bar
+bar
+ */
