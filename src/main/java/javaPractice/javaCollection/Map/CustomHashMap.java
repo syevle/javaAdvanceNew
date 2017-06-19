@@ -1,4 +1,4 @@
-package javaPractice.javaCollection;
+package javaPractice.javaCollection.Map;
 
 /**
  * The CustomHashMap uses an array of KeyValuePair.
