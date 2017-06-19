@@ -1,67 +1,50 @@
 package javaPractice.thread.ParallelTasks;
 
+import javaPractice.thread.ConcurrentUtils;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class ParallelTasks
-{
+public class ParallelTasks {
     private final Collection<Runnable> tasks = new ArrayList<Runnable>();
 
-    public ParallelTasks()
-    {
+    public ParallelTasks() {
     }
 
-    public void add(final Runnable task)
-    {
+    public void add(final Runnable task) {
         tasks.add(task);
     }
 
-    public void go() throws InterruptedException
-    {
+    public void go() throws InterruptedException {
         final ExecutorService threads = Executors.newFixedThreadPool(Runtime.getRuntime()
                 .availableProcessors());
-        try
-        {
+
             final CountDownLatch latch = new CountDownLatch(tasks.size());
-            for (final Runnable task : tasks)
-                threads.execute(new Runnable() {
-                    public void run()
-                    {
-                        try
-                        {
-                            task.run();
-                        }
-                        finally
-                        {
-                            latch.countDown();
-                        }
+            tasks.forEach(task->{
+                threads.execute(() -> {
+                    try {
+                        task.run();
+                    } finally {
+                        latch.countDown();
                     }
                 });
-            latch.await();
-        }
-        finally
-        {
-            threads.shutdown();
-        }
+            });
+
+        ConcurrentUtils.stop(threads);
     }
-    public static void main(final String[] args) throws Exception
-    {
+
+    public static void main(final String[] args) throws Exception {
         ParallelTasks tasks = new ParallelTasks();
-        final Runnable waitOneSecond = new Runnable() {
-            public void run()
-            {
-                try
-                {
+        final Runnable waitOneSecond = ()->{
+                try {
                     Thread.sleep(1000);
+                } catch (InterruptedException e) {
                 }
-                catch (InterruptedException e)
-                {
-                }
-            }
-        };
+            };
+
         tasks.add(waitOneSecond);
         tasks.add(waitOneSecond);
         tasks.add(waitOneSecond);
