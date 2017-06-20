@@ -7,7 +7,7 @@ public class Employee {
     private String name;
     private String jobTitle;
     private int age;
-    private Integer salary;
+    private int salary;
 
     public Employee(String name, String jobTitle, int age, int salary) {
         this.name = name;
@@ -46,11 +46,11 @@ public class Employee {
         this.age = age;
     }
 
-    public Integer getSalary() {
+    public int getSalary() {
         return salary;
     }
 
-    public void setSalary(Integer salary) {
+    public void setSalary(int salary) {
         this.salary = salary;
     }
 }

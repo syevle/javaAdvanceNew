@@ -104,8 +104,11 @@ public class SortingMultipleAttributesExample {
         });
 
         System.out.println("\n*** sorting using Collections.sort Age is primitive data type : Java 8 Style");
+//        Collections.sort(
+//                listEmployees, Comparator.comparing(employee -> employee.getAge()));
+
         Collections.sort(
-                listEmployees, Comparator.comparing(employee -> employee.getAge()));
+                listEmployees, Comparator.comparing(Employee::getAge));
 
         listEmployees.forEach(employee->{
             System.out.println(employee);
