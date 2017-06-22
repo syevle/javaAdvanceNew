@@ -64,3 +64,8 @@ public class App8 {
                 + c.getNum());
     }
 }
+
+/*
+consume
+produce
+ */
