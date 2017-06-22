@@ -75,3 +75,30 @@ public class ConcurrentHashMap1 {
     }
 
 }
+
+/*
+Parallelism: 7
+key: r2; value: d2; thread: main
+key: han; value: solo; thread: ForkJoinPool.commonPool-worker-2
+key: foo; value: bar; thread: ForkJoinPool.commonPool-worker-4
+key: c3; value: p0; thread: main
+4
+
+search()
+
+main
+main
+ForkJoinPool.commonPool-worker-2
+ForkJoinPool.commonPool-worker-4
+foobar
+
+searchValues()
+
+main
+ForkJoinPool.commonPool-worker-1
+ForkJoinPool.commonPool-worker-2
+main
+solo
+r2=d2, c3=p0, han=solo, foo=bar
+
+ */

@@ -16,12 +16,11 @@ import java.util.concurrent.TimeUnit;
 public class Executors3 {
 
     public static void main(String[] args) throws InterruptedException, ExecutionException {
-        test1();
+//        test1();
 //        test2();
 //        test3();
-
 //        test4();
-//        test5();
+        test5();
     }
 
     private static void test5() throws InterruptedException, ExecutionException {
@@ -106,3 +105,59 @@ public class Executors3 {
     }
 
 }
+
+/*
+For test1
+
+Remaining Delay: 1658ms
+Scheduling: 71656464824507
+ */
+
+/*
+For test2
+
+Scheduling: 71706756774232
+Scheduling: 71707759845952
+Scheduling: 71708760026637
+Scheduling: 71709760925278
+Scheduling: 71710756163816
+Scheduling: 71711757139577
+Scheduling: 71712758548732
+Scheduling: 71713759040740
+Scheduling: 71714760923435
+Scheduling: 71715759005785
+Scheduling: 71716756339099
+Scheduling: 71717759513565
+Scheduling: 71718758835687
+
+ */
+
+/*
+For test3
+
+Scheduling: 71751570072622
+Scheduling: 71754572690362
+Scheduling: 71757582144418
+Scheduling: 71760593465315
+Scheduling: 71763597000547
+Scheduling: 71766603499851
+Scheduling: 71769609450454
+ */
+
+
+/*
+For test4
+
+task1
+task2
+task3
+*/
+
+
+/*
+For test5
+
+task2
+
+*/
+

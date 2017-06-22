@@ -31,3 +31,7 @@ public class LongAccumulator1 {
         System.out.format("Add: %d\n", accumulator.getThenReset());
     }
 }
+
+/*
+Add: 2037
+ */

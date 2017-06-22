@@ -8,9 +8,9 @@ import java.util.concurrent.TimeUnit;
 public class Threads1 {
 
     public static void main(String[] args) {
-        test1();
+//        test1();
 //        test2();
-//        test3();
+        test3();
     }
 
     private static void test3() {
@@ -59,3 +59,26 @@ public class Threads1 {
         System.out.println("Done!");
     }
 }
+
+
+/*
+For test1
+
+Hello main
+Done!
+Hello Thread-0
+ */
+
+/*
+For test2
+
+Foo Thread-0
+Bar Thread-0
+ */
+
+/*
+For test3
+
+Foo Thread-0
+Bar Thread-0
+ */

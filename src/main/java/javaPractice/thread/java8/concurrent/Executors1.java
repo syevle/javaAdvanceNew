@@ -47,3 +47,9 @@ public class Executors1 {
         }
     }
 }
+
+/*
+attempt to shutdown executor
+task finished: pool-1-thread-1
+shutdown finished
+ */

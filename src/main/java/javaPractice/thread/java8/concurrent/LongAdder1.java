@@ -43,3 +43,8 @@ public class LongAdder1 {
         System.out.format("Increment: Expected=%d; Is=%d\n", NUM_INCREMENTS, adder.sumThenReset());
     }
 }
+
+/*
+Increment: Expected=10000; Is=10000
+Add: 20000
+ */

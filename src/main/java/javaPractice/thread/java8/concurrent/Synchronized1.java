@@ -58,7 +58,7 @@ public class Synchronized1 {
 
 /*
 OutPut :
-   Sync: 10000
+Sync: 10000
 NonSync: 9985
 
  */

@@ -20,3 +20,8 @@ public class CompletableFuture1 {
     }
 
 }
+
+/*
+42
+done
+ */

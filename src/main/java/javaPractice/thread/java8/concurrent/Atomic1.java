@@ -70,3 +70,8 @@ public class Atomic1 {
     }
 
 }
+
+/*
+Accumulate: 499500
+Update: 2000
+ */

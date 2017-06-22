@@ -44,3 +44,16 @@ public class Semaphore2 {
     }
 
 }
+
+/*
+Semaphore acquired
+Semaphore acquired
+Semaphore acquired
+Semaphore acquired
+Semaphore acquired
+Could not acquire semaphore
+Could not acquire semaphore
+Could not acquire semaphore
+Could not acquire semaphore
+Could not acquire semaphore
+ */
