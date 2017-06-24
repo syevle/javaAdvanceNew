@@ -11,6 +11,7 @@ public class ReadWithFilesLinesWithFilters {
 
         try {
             Files.lines(Paths.get("/Users/Santosh/java8/master/javaAdvanceNew/src/main/java/javaPractice/java8/venkat/m09_readfile/data.txt")).forEach(System.out::println);
+            Files.readAllLines(Paths.get("/Users/Santosh/java8/master/javaAdvanceNew/src/main/java/javaPractice/java8/venkat/m09_readfile/data.txt")).parallelStream();
         } catch (IOException e) {
             e.printStackTrace();
         }
