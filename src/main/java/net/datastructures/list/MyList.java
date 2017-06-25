@@ -39,16 +39,25 @@ public class MyList<E> {
         if(index < size){
             Object obj =  elements[index];
             elements[index] = null;
-            int tmp = index;
-            while(tmp < size){
-                elements[tmp] = elements[tmp+1];
-                elements[tmp+1] = null;
-                tmp++;
-            }
             size--;
+            condenseArray(index);
+//            Object obj =  elements[index];
+//            elements[index] = null;
+//            int tmp = index;
+//            while(tmp < size){
+//                elements[tmp] = elements[tmp+1];
+//                elements[tmp+1] = null;
+//                tmp++;
+//            }
+//            size--;
             return obj;
         } else {
             throw new ArrayIndexOutOfBoundsException();
+        }
+    }
+    private void condenseArray(int start) {
+        for (int i = start; i < size; i++) {
+            elements[i] = elements[i + 1];
         }
     }
 }
