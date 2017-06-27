@@ -72,6 +72,7 @@ public class Atomic1 {
 }
 
 /*
+Increment: Expected=1000; Is=1000
 Accumulate: 499500
 Update: 2000
  */
