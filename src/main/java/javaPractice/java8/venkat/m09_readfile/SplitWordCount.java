@@ -29,7 +29,7 @@ public class SplitWordCount {
             e.printStackTrace();
         }
 
-        TopOccurrence topOccurrence = new TopOccurrence(4);
+        TopOccurrence topOccurrence = new TopOccurrence(2);
         assert stream != null;
         stream //Utilizes multi-core hardware
                 .flatMap(s -> Arrays.asList(s.split(" ")).stream())
