@@ -56,3 +56,39 @@ public class CsvReader {
     Function<String, List<String>> mapper
             = line -> Arrays.asList(line.split(SEPARATOR));
 }
+
+/*
+public class CsvReaderTest {
+
+    @Test
+    public void readsHeader() {
+        CsvReader csvReader = createCsvReader();
+        List<String> header = csvReader.readHeader();
+        assertThat(header)
+                .contains("username")
+                .contains("visited")
+                .hasSize(2);
+    }
+
+    @Test
+    public void readsRecords() {
+        CsvReader csvReader = createCsvReader();
+        List<List<String>> records = csvReader.readRecords();
+        assertThat(records)
+                .contains(Arrays.asList("jdoe", "10"))
+                .contains(Arrays.asList("kolorobot", "4"))
+                .hasSize(2);
+    }
+
+    private CsvReader createCsvReader() {
+        try {
+            Path path = Paths.get("src/test/resources", "sample.csv");
+            Reader reader = Files.newBufferedReader(
+                path, Charset.forName("UTF-8"));
+            return new CsvReader(reader);
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
+    }
+}
+ */
