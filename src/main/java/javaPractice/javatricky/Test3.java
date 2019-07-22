@@ -2,9 +2,10 @@ package javaPractice.javatricky;
 
 
 public class Test3 {
-    public static void javaHugry(String arg){
+    public static void javaHugry(String s){
 
-        arg = "i am javaHugry";
+        s = "i am javaHugry";
+        System.out.println("Inside javaHugry "+s);
     }
 
     public static void main(String [] args){
@@ -14,3 +15,9 @@ public class Test3 {
         System.out.println(s);
     }
 }
+//=============== OutPut ========================
+/*
+    Inside javaHugry i am javaHugry
+    I am new born
+
+*/
