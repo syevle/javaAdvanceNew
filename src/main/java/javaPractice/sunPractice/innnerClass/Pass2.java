@@ -25,13 +25,23 @@ package javaPractice.sunPractice.innnerClass;
  */
 public class Pass2 {
     public static void main(String [] args) {
-        int x = 5;
+        int x = 6;
         Pass2 p = new Pass2();
         p.doStuff(x);
         System.out.print(" main x = " + x);
     }
 
     void doStuff(int x) {
-        System.out.print(" doStuff x = " + x++);
+        System.out.print("int doStuff x = " + x++);
+//        System.out.print(" doStuff x = " + ++x);
+    }
+    void doStuff(Integer x) {
+        System.out.print("Integer doStuff x = " + x++);
+//        System.out.print(" doStuff x = " + ++x);
     }
 }
+
+/*
+Output :
+int doStuff x = 6 main x = 6
+ */

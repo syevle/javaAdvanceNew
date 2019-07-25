@@ -12,3 +12,7 @@ public class TestB extends TestA {
         ((TestA)new TestB()).start();
     }
 }
+/*
+--------------------------------- OUTPUT ---------------------------
+TestB
+*/

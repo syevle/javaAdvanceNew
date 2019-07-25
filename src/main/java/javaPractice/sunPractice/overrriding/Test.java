@@ -5,7 +5,6 @@ package javaPractice.sunPractice.overrriding;
  */
 class A {
     int i = 10;
-
     public void printValue() {
         System.out.println("Value-A");
     }
@@ -13,9 +12,8 @@ class A {
 
 class B extends A {
     int i = 12;
-
     public void printValue() {
-        System.out.print("Value-B");
+        System.out.println("Value-B");
     }
 }
 
@@ -26,3 +24,9 @@ public class Test {
         System.out.println(a.i);
     }
 }
+
+/*
+----------------------------       OUTPUT          -----------------------------
+Value-B
+10
+*/

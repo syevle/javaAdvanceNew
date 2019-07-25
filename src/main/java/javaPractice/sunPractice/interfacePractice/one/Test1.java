@@ -6,16 +6,19 @@ package javaPractice.sunPractice.interfacePractice.one;
 public class Test1 {
 
     public static void parse(String str) {
-
+        float f=1;
         try {
-            float f = Float.parseFloat(str);
+            f = Float.parseFloat(str);
         } catch (NumberFormatException nfe) {
-//            f = 0;
+            f = 5;
         } finally {
-//            System.out.println(f);
+            System.out.println(f);
         }
     }
     public static void main(String[] args) {
         parse("invalid");
     }
 }
+/*
+5.0
+ */

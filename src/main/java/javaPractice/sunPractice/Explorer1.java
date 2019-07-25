@@ -15,3 +15,6 @@ public class Explorer1 {
         System.out.println(s + " " + subs);
     }
 }
+/*
+[606, 608, 609, 610, 612] [608, 609, 610]
+ */

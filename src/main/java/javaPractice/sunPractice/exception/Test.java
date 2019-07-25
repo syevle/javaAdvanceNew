@@ -16,3 +16,9 @@ public class Test {
         System.out.print("end ");
     }
 }
+/*
+OUTPUT : -
+Exception in thread "main" java.lang.AssertionError
+	at javaPractice.sunPractice.exception.Test.test(Test.java:10)
+	at javaPractice.sunPractice.exception.Test.main(Test.java:14)
+ */

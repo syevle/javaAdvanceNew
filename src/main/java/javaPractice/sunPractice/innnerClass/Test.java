@@ -39,3 +39,7 @@ public class Test {
             System.out.print("3 ");
     }
 }
+/*
+------------------------- OUTPUT----------------
+2 3
+ */

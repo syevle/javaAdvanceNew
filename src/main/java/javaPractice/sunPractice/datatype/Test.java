@@ -1,8 +1,4 @@
 package javaPractice.sunPractice.datatype;
-
-/**
- * Created by Santosh on 6/18/17.
- */
 public class Test {
     public static void main(String[] args) {
         byte b = 6;
@@ -16,8 +12,8 @@ public class Test {
 /*
 A.14 21
 B.14 13
-C.Compilation fails with an error at line 6
-D.Compilation fails with an error at line 4
+C.Compilation fails with an error at line 7
+D.Compilation fails with an error at line 5
 Answer :
 C is the correct answer.
 int or smaller expressions always resulting in an int. So compiler complain about Type

@@ -12,6 +12,7 @@ public class Test1 {
     }
     public static void main(String... args) {
         byte b = 9;
+//        short b = 9;
         printValue(b,b,b);
     }
 }
