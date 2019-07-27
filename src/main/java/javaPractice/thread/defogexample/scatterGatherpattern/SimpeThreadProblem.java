@@ -1,4 +1,4 @@
-package javaPractice.thread.defogexample;
+package javaPractice.thread.defogexample.scatterGatherpattern;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -12,7 +12,7 @@ This Solution Implements using simple Thread.
 Retrieve price from N sources, waiting from max 3 second.
  */
 
-public class SimpeThread {
+public class SimpeThreadProblem {
     public static void main(String args[]) throws InterruptedException {
         ExecutorService threadPool = Executors.newFixedThreadPool(4);
         Set<Integer> price = Collections.synchronizedSet(new HashSet<>());

@@ -1,29 +1,28 @@
-package javaPractice.thread.defogexample;
+package javaPractice.thread.defogexample.scatterGatherpattern;
 
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
-import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.Phaser;
 
-public class CountDownLatchExample {
+public class PhaserExample {
 
     public static void main(String args[]) throws InterruptedException {
         ExecutorService threadPool = Executors.newFixedThreadPool(4);
 
         Set<Integer> price = Collections.synchronizedSet(new HashSet<>());
 
-        CountDownLatch latch = new CountDownLatch(3);
+        Phaser phaser = new Phaser(3);
 
         //Creating shared object
-        threadPool.submit(new Task("url 1","1",price,latch));
-        threadPool.submit(new Task("url 2","2",price,latch));
-        threadPool.submit(new Task("url 3","3",price,latch));
+        threadPool.submit(new Task("url 1","1",price,phaser));
+        threadPool.submit(new Task("url 2","2",price,phaser));
+        threadPool.submit(new Task("url 3","3",price,phaser));
 
-        latch.await(5, TimeUnit.SECONDS);
+        phaser.awaitAdvance(1);
 
         System.out.println(price);
 
@@ -34,23 +33,19 @@ public class CountDownLatchExample {
         private String url;
         private String productId;
         private Set<Integer> price;
-        private CountDownLatch latch;
-        public Task(String url,String productId,Set<Integer> price,CountDownLatch latch){
+        private Phaser phaser;
+        public Task(String url,String productId,Set<Integer> price,Phaser phaser){
             this.url =url;
             this.productId=productId;
             this.price=price;
-            this.latch=latch;
+            this.phaser=phaser;
         }
 
         @Override
         public void run() {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            phaser.arrive();
             price.add(new Random().nextInt());
-            latch.countDown();
+
             System.out.println(url+" "+productId);
 
         }
