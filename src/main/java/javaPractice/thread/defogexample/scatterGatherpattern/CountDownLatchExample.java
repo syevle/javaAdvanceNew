@@ -23,7 +23,7 @@ public class CountDownLatchExample {
         threadPool.submit(new Task("url 2","2",price,latch));
         threadPool.submit(new Task("url 3","3",price,latch));
 
-        latch.await(5, TimeUnit.SECONDS);
+        latch.await(3, TimeUnit.SECONDS);
 
         System.out.println(price);
 
