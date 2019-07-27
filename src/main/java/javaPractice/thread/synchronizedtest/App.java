@@ -17,7 +17,7 @@ class Worker {
 //        count++;
 //    }
 
-    public void run() {
+    public void play() {
         Thread thread1 = new Thread(new Runnable() {
             public void run() {
                 for(int i = 0; i < 10000; i++) {
@@ -51,7 +51,7 @@ public class App {
 
     public static void main(String[] args) {
         Worker pro = new Worker();
-        pro.run();
+        pro.play();
     }
 
 }

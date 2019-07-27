@@ -1,19 +1,20 @@
-package javaPractice.thread.threadpools;
+package javaPractice.thread.defogexample;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
-
 
 class Task implements Runnable
 {
     private String name;
+    private Semaphore semaphore;
 
-    public Task(String name)
+    public Task(String name,Semaphore semaphore)
     {
         this.name = name;
+        this.semaphore = semaphore;
     }
 
     public String getName() {
@@ -23,34 +24,29 @@ class Task implements Runnable
     @Override
     public void run()
     {
-        try
-        {
-            Long duration = (long) (Math.random() * 10);
-            System.out.println("Doing a task during : " + name);
-            TimeUnit.SECONDS.sleep(duration);
-        }
-        catch (InterruptedException e)
-        {
+        semaphore.acquireUninterruptibly();
+        longRunningIOcall();
+        semaphore.release();
+    }
+
+    private void longRunningIOcall() {
+        try {
+            //Long Running IO call
+            System.out.println("Start long running IO call "+name);
+            Thread.sleep(50);
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 }
 
-public class BasicThreadPoolExecutorExample
+public class SemaphoreExample
 {
     public static void main(String[] args) throws InterruptedException {
-        //Use the executor created by the newCachedThreadPool() method
-        //only when you have a reasonable number of threads
-        //or when they have a short duration.
-        ExecutorService service = Executors.newCachedThreadPool();
-//        IntStream.range(0,5).forEach(i->service.execute(new Task("Task "+i)));
-
-        for (int i = 0; i <= 5; i++)
-        {
-            Task task = new Task("Task " + i);
-            System.out.println("A new task has been added : " + task.getName());
-            service.execute(task);
-        }
+        Semaphore semaphore = new Semaphore(3);
+        ExecutorService service =  Executors.newFixedThreadPool(50);
+        //Due to semaphore at time only 3 thread execute and other thread blocking state.
+        IntStream.range(0,1000).forEach(i->service.execute(new Task("Task "+i,semaphore)));
         service.shutdown();
         service.awaitTermination(1,TimeUnit.MINUTES);
 

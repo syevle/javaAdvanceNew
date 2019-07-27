@@ -1,27 +1,31 @@
-package javaPractice.thread.scatterGatherpattern;
+package javaPractice.thread.defogexample;
 
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
-public class CompletableFutureExample {
+/*
+This Solution Implements using simple Thread.
+Retrieve price from N sources, waiting from max 3 second.
+ */
 
-    public static void main(String args[]) throws InterruptedException, TimeoutException, ExecutionException {
-
+public class SimpeThread {
+    public static void main(String args[]) throws InterruptedException {
+        ExecutorService threadPool = Executors.newFixedThreadPool(4);
         Set<Integer> price = Collections.synchronizedSet(new HashSet<>());
-
         //Creating shared object
-        CompletableFuture<Void> task1 = CompletableFuture.runAsync(new Task("url 1","1",price));
-        CompletableFuture<Void> task2 = CompletableFuture.runAsync(new Task("url 1","1",price));
-        CompletableFuture<Void> task3 = CompletableFuture.runAsync(new Task("url 1","1",price));
+        threadPool.submit(new Task("url 1","1",price));
+        threadPool.submit(new Task("url 2","2",price));
+        threadPool.submit(new Task("url 3","3",price));
 
-        CompletableFuture<Void> allTask = CompletableFuture.allOf(task1,task2,task3);
-        allTask.get(6,TimeUnit.SECONDS);
+        Thread.sleep(5000);
+
         System.out.println(price);
 
-
+        threadPool.shutdownNow();
     }
 
     private static class Task implements Runnable{
@@ -43,8 +47,8 @@ public class CompletableFutureExample {
             }
             price.add(new Random().nextInt());
             System.out.println(url+" "+productId);
-
         }
     }
 
 }
+
