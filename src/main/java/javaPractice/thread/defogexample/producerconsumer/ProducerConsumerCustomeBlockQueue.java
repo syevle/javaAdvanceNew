@@ -2,6 +2,7 @@ package javaPractice.thread.defogexample.producerconsumer;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 /**
  * BlockingQueue amazingly simplifies implementation of Producer-Consumer design pattern by providing outofbox
@@ -13,7 +14,7 @@ import java.util.concurrent.Executors;
  */
 public class ProducerConsumerCustomeBlockQueue {
 
-    public static void main(String args[]){
+    public static void main(String args[]) throws InterruptedException {
         ExecutorService executor = Executors.newFixedThreadPool(2);
         //Creating shared object
         BlockingQueue sharedQueue = new BlockingQueue<Integer>(2);
@@ -25,7 +26,8 @@ public class ProducerConsumerCustomeBlockQueue {
         //Starting producer and Consumer thread
         executor.submit(prodThread);
         executor.submit(consThread);
-        executor.shutdownNow();
+        executor.shutdown();
+        executor.awaitTermination(1, TimeUnit.MINUTES);
     }
 
 }
