@@ -9,10 +9,9 @@ CyclicBarrier send message all player once
 public class CyclicBarrierExample {
 
     public static void main(String args[]) throws InterruptedException {
-        ExecutorService threadPool = Executors.newFixedThreadPool(4);
-
         CyclicBarrier cyclicBarrier = new CyclicBarrier(3);
 
+        ExecutorService threadPool = Executors.newFixedThreadPool(4);
         //Creating Player
         threadPool.submit(new Player("Nitin", cyclicBarrier));
         threadPool.submit(new Player("Ramdas", cyclicBarrier));

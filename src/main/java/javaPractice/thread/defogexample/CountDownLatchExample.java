@@ -8,10 +8,8 @@ import java.util.concurrent.TimeUnit;
 public class CountDownLatchExample {
 
     public static void main(String args[]) throws InterruptedException {
-        ExecutorService threadPool = Executors.newFixedThreadPool(4);
-
         CountDownLatch latch = new CountDownLatch(3);
-
+        ExecutorService threadPool = Executors.newFixedThreadPool(4);
         //Creating shared object
         threadPool.submit(new DependentSevice("Cache Service",1000,latch));
         threadPool.submit(new DependentSevice("DB Service",2000,latch));
