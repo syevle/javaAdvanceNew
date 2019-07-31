@@ -1,4 +1,4 @@
-package javaPractice.thread.defogexample.CustomThreadExample;
+package javaPractice.thread.defogexample.semaphoreExample;
 
 /**
  *How to use the ReentrantLock class in Java as an alternative to synchronized code blocks.
