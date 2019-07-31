@@ -1,6 +1,8 @@
 package javaPractice.thread.CyclicBarrierExample;
 
-import javaPractice.thread.ConcurrentUtils;
+
+
+
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
@@ -17,22 +19,19 @@ before starting again.
 
 public class HelloHP {
     public static void main(String args[]) throws InterruptedException, BrokenBarrierException {
-//        ExecutorService executor = Executors.newFixedThreadPool(4);
+        ExecutorService executor = Executors.newFixedThreadPool(4);
         CyclicBarrier barrier = new CyclicBarrier(4);
         Party first = new Party(1000, barrier, "PARTY-1");
         Party second = new Party(2000, barrier, "PARTY-2");
         Party third = new Party(3000, barrier, "PARTY-3");
         Party fourth = new Party(4000, barrier, "PARTY-4");
-        first.start();
-        second.start();
-        third.start();
-        fourth.start();
-//        executor.submit(first);
-//        executor.submit(second);
-//        executor.submit(third);
-//        executor.submit(fourth);
 
-//        ConcurrentUtils.stop(executor);
+        executor.submit(first);
+        executor.submit(second);
+        executor.submit(third);
+        executor.submit(fourth);
+
+        executor.shutdown();
         System.out.println(Thread.currentThread().getName() + " has finished");
     }
 }
