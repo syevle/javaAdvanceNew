@@ -1,4 +1,4 @@
-package javaPractice.thread.callable_and_future;
+package javaPractice.thread.defogexample.CallableExample;
 
 import java.util.ArrayList;
 import java.util.List;
