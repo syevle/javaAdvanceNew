@@ -5,6 +5,7 @@ Link https://www.javacodemonk.com/implement-thread-pool-in-java-without-executor
  */
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.stream.IntStream;
 
 public class CustomThreadPoolExecutor {
     private final BlockingQueue<Runnable> workerQueue;
@@ -48,8 +49,11 @@ public class CustomThreadPoolExecutor {
 
     public static void main(String[] args) {
         CustomThreadPoolExecutor threadPoolExecutor = new CustomThreadPoolExecutor(10);
-        threadPoolExecutor.addTask(() -> System.out.println("First print task"));
-        threadPoolExecutor.addTask(() -> System.out.println("Second print task"));
+        IntStream.range(1,100).forEach(i->{
+            threadPoolExecutor.addTask(() -> System.out.println(i+" print task"));
+        });
+
+
     }
 
 }
