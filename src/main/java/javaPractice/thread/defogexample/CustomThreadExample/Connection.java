@@ -10,8 +10,11 @@ import java.util.concurrent.Semaphore;
 
 public class Connection {
     private static Connection instance = new Connection();
+    // total 10 connection pool object made.
     private Semaphore sem = new Semaphore(10, true);
+
     private int connections = 0;
+
     private Connection() {
     }
     public static Connection getInstance() {
@@ -29,13 +32,14 @@ public class Connection {
     public void doConnect() throws InterruptedException {
         synchronized (this) {
             connections++;
-            System.out.println("Current connections: " + connections);
+            System.out.println("Get connections: " + connections);
         }
         // DB Work done in 2 second.
         Thread.sleep(2000);
-
+        // DB work done and release DB connection.
         synchronized (this) {
             connections--;
+            System.out.println("Release connections: " + connections);
         }
 
     }
