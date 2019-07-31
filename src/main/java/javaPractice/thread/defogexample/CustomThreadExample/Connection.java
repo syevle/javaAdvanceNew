@@ -17,9 +17,11 @@ public class Connection {
 
     private Connection() {
     }
+    
     public static Connection getInstance() {
         return instance;
     }
+
     public void connect() throws InterruptedException {
         sem.acquireUninterruptibly();
         try {
