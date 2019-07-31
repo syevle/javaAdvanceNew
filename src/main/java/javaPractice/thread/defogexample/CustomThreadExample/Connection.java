@@ -17,7 +17,7 @@ public class Connection {
 
     private Connection() {
     }
-    
+
     public static Connection getInstance() {
         return instance;
     }
