@@ -5,12 +5,12 @@ package javaPractice.algo.datastructure;
  */
 import java.util.*;
 /*  Class arrayQueue  */
-class arrayQueue
+class ArrayQueue
 {
     protected int Queue[] ;
     protected int front, rear, size, len;
     /* Constructor */
-    public arrayQueue(int n)
+    public ArrayQueue(int n)
     {
         size = n;
         len = 0;
@@ -113,7 +113,7 @@ public class QueueImplement
         System.out.println("Enter Size of Integer Queue ");
         int n = scan.nextInt();
         /* creating object of class arrayQueue */
-        arrayQueue q = new arrayQueue(n);
+        ArrayQueue q = new ArrayQueue(n);
         /* Perform Queue Operations */
         char ch;
         do{
