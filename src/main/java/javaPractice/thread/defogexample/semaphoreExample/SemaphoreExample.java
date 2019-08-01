@@ -1,4 +1,4 @@
-package javaPractice.thread.defogexample;
+package javaPractice.thread.defogexample.semaphoreExample;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
