@@ -5,7 +5,7 @@ package javaPractice.thread.defogexample.semaphoreExample;
  * They all try to run the connect() method of the Connection class at the same time.
  */
 
-import javaPractice.thread.semaphores.Connection;
+
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -21,7 +21,11 @@ public class App {
         for(int i=0; i < 200; i++) {
             executor.submit(new Runnable() {
                 public void run() {
-                    Connection.getInstance().connect();
+                    try {
+                        Connection.getInstance().connect();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
             });
         }
