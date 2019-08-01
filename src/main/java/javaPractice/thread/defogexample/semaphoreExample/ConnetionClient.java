@@ -32,7 +32,7 @@ public class ConnetionClient {
 
         executor.shutdown();
 
-        executor.awaitTermination(1, TimeUnit.DAYS);
+        executor.awaitTermination(5, TimeUnit.MINUTES);
     }
 
 }
