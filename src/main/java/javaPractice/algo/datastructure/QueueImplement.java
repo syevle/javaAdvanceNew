@@ -4,11 +4,7 @@ package javaPractice.algo.datastructure;
  * Created by Santosh on 5/12/17.
  */
 import java.util.*;
-
-
-
 /*  Class arrayQueue  */
-
 class arrayQueue
 {
     protected int Queue[] ;
