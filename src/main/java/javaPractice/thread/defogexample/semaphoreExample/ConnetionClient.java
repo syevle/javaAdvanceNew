@@ -12,7 +12,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 
-public class App {
+public class ConnetionClient {
 
     public static void main(String[] args) throws Exception {
 
