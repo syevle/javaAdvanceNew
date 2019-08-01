@@ -44,7 +44,7 @@ public class SemaphoreExample
 {
     public static void main(String[] args) throws InterruptedException {
         Semaphore semaphore = new Semaphore(3);
-        ExecutorService service =  Executors.newFixedThreadPool(50);
+        ExecutorService service =  Executors.newCachedThreadPool();
         //Due to semaphore at time only 3 thread execute and other thread blocking state.
         IntStream.range(0,1000).forEach(i->service.execute(new Task("Task "+i,semaphore)));
         service.shutdown();
