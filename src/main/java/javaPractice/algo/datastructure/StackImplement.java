@@ -14,11 +14,7 @@ package javaPractice.algo.datastructure;
  The program output is also shown below.
  */
 import java.util.*;
-
-
-
 /*  Class arrayStack  */
-
 class arrayStack
 {
     protected int arr[];
