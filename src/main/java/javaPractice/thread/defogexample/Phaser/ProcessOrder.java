@@ -49,3 +49,19 @@ public class ProcessOrder {
 
     }
 }
+/*
+Starting to process the order.
+cook doing this work for order 1
+waiter doing this work for order 1
+attendent doing this work for order 1
+Order 1 completed
+attendent doing this work for order 2
+waiter doing this work for order 2
+cook doing this work for order 2
+Order 2 completed
+cook doing this work for order 3
+attendent doing this work for order 3
+waiter doing this work for order 3
+Order 3 completed
+Process completed
+ */
