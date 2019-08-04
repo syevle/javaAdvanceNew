@@ -1,5 +1,9 @@
 package javaPractice.thread.defogexample.CompletableFutureExample;
-
+/*
+CompletableFuture.getNow
+getNow is a method that if calling completion stage is not completed
+then the value passed to getNow will be set to result.
+ */
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
