@@ -15,6 +15,6 @@ public class CompletableFuture1Example {
                 .forEach(s->System.out.println(s));
     }
     private static int getNumber(int a){
-        return a+1;
+        return a;
     }
 }
