@@ -7,7 +7,7 @@ then the value passed to getNow will be set to result.
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-public class CompletableFutureFourExample {
+public class CompletableFuture3Example {
     public static void main(String[] args) {
         List<String> list = Arrays.asList("A","B","C","D");
         list.stream().map(s->CompletableFuture.supplyAsync(()->s+s))

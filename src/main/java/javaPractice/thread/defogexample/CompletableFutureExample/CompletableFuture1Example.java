@@ -7,7 +7,7 @@ This method waits for the completion of calling completion stage.
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-public class CompletableFutureOneExample {
+public class CompletableFuture1Example {
     public static void main(String[] args) throws InterruptedException {
         List<Integer> list = Arrays.asList(1,2,3,4);
         list.stream().map(data->CompletableFuture.supplyAsync(()->getNumber(data))).
