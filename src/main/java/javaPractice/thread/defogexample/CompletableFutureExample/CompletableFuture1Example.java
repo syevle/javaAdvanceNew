@@ -18,3 +18,9 @@ public class CompletableFuture1Example {
         return a;
     }
 }
+/*
+2
+4
+6
+8
+ */
