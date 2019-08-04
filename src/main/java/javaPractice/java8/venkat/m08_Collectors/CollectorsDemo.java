@@ -95,6 +95,12 @@ public class CollectorsDemo {
 
         System.out.format("Number of age groups: %d%n", mapWithYoungOrOldAsKey.keySet().size());
         System.out.println(mapWithYoungOrOldAsKey);
+
+//        final Map<String, List<Person>> mapWithChildOrYoungOrOldAsKey = people.stream()
+//                .collect(Collectors.groupingBy(person -> (person.getAge() < 15) ? ((person.getAge() >= 50)?"Young":"Old"): "Child"));
+//
+//        System.out.format("mapWithChildOrYoungOrOldAsKey :: Number of age groups: %d%n", mapWithChildOrYoungOrOldAsKey.keySet().size());
+//        System.out.println(mapWithChildOrYoungOrOldAsKey);
     }
 
     private static void maxBy(List<Person> people) {
