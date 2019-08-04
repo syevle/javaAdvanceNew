@@ -1,4 +1,4 @@
-package javaPractice.thread.defogexample.CustomThreadExample;
+package javaPractice.thread.defogexample.deadlock;
 /*
  LINK : https://www.javacodemonk.com/what-is-deadlock-in-java-how-to-troubleshoot-and-how-to-avoid-deadlock-2526a14f
 

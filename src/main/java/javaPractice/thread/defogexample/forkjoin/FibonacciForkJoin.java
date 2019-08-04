@@ -18,7 +18,8 @@ public class FibonacciForkJoin extends RecursiveTask<Integer> {
             FibonacciForkJoin f1 = new FibonacciForkJoin(n-1);
             f1.fork();
             FibonacciForkJoin f2 = new FibonacciForkJoin(n-2);
-            return f2.compute() + f1.join();
+            f2.fork();
+            return f2.join() + f1.join();
         }
     }
     public static void main(String sa[]){
