@@ -1,8 +1,9 @@
-package javaPractice.javaCollection.Sort.SortingMultipleAttributesExample;
+package javaPractice.java8Comparator.sort;
 
 /**
  * Created by Santosh on 6/19/17.
  */
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;

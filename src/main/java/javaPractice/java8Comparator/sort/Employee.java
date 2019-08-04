@@ -1,4 +1,4 @@
-package javaPractice.javaCollection.Sort.SortingMultipleAttributesExample;
+package javaPractice.java8Comparator.sort;
 
 /**
  * Created by Santosh on 6/19/17.
