@@ -31,3 +31,8 @@ public class SynchronousQueueDemo {
 
     }
 }
+
+/*
+Dryer dish number : Washer
+Wash dish number : Washer
+ */
