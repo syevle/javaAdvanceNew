@@ -14,7 +14,7 @@ public class CountDownLatchExample {
         threadPool.submit(new DependentSevice("Cache Service",1000,latch));
         threadPool.submit(new DependentSevice("DB Service",2000,latch));
         threadPool.submit(new DependentSevice("Cassandra Service",3000,latch));
-        System.out.println("Main Thread wait for other Service to complet has work");
+        System.out.println("Main Thread wait for other Service to complete has work");
         latch.await(5, TimeUnit.SECONDS);
         System.out.println("All service started. and main thread started");
         threadPool.shutdown();
