@@ -1,4 +1,4 @@
-package javaPractice.thread.defogexample.CyclicBarrier;
+package javaPractice.thread.defogexample.CyclicBarrierExample;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
