@@ -1,4 +1,4 @@
-package javaPractice.thread.defogexample;
+package javaPractice.thread.defogexample.CountDownLatchExample;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
