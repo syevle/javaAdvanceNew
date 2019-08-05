@@ -9,7 +9,7 @@ CyclicBarrier send message all player once
 public class CyclicBarrierExample {
 
     public static void main(String args[]) throws InterruptedException {
-        CyclicBarrier cyclicBarrier = new CyclicBarrier(3);
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(3,()->System.out.println("All Player Ready."));
 
         ExecutorService threadPool = Executors.newFixedThreadPool(4);
         //Creating Player
@@ -17,7 +17,6 @@ public class CyclicBarrierExample {
         threadPool.submit(new Player("Ramdas", cyclicBarrier));
         threadPool.submit(new Player("Navnath", cyclicBarrier));
         Thread.sleep(2000);
-        System.out.println("All player start playing.");
         threadPool.shutdown();
     }
 
@@ -47,3 +46,15 @@ public class CyclicBarrierExample {
     }
 
 }
+/*
+Ramdas is waiting for other player.
+Nitin is waiting for other player.
+Navnath is waiting for other player.
+All Player Ready.
+Navnath start playing.
+Ramdas start playing.
+Nitin start playing.
+Nitin is waiting for other player.
+Navnath is waiting for other player.
+Ramdas is waiting for other player.
+ */
