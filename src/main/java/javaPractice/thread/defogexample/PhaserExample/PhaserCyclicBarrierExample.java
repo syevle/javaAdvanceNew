@@ -1,4 +1,4 @@
-package javaPractice.thread.defogexample.Phaser;
+package javaPractice.thread.defogexample.PhaserExample;
 
 import java.util.concurrent.*;
 
