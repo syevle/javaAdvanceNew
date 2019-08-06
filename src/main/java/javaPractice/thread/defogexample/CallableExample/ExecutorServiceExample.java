@@ -45,7 +45,7 @@ public class ExecutorServiceExample {
         execs.shutdown();
         System.out.println("Sent shutdown signal");
 
-        execs.awaitTermination(60, TimeUnit.MINUTES);
+        execs.awaitTermination(1, TimeUnit.SECONDS);
 
         System.out.println("Results: ");
         int index = 0;

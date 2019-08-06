@@ -28,7 +28,7 @@ public class ExecutorServiceExample2 {
         // this is just a signal; it won't terminate until all tasks are completed
         execs.shutdown();
         System.out.println("Sent shutdown signal");
-        execs.awaitTermination(60, TimeUnit.MINUTES);
+        execs.awaitTermination(1, TimeUnit.SECONDS);
 
         System.out.print("Results: "+result.get());
     }
