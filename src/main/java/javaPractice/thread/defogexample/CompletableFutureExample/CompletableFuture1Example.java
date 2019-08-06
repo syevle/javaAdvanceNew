@@ -11,7 +11,7 @@ public class CompletableFuture1Example {
     public static void main(String[] args) throws InterruptedException {
         List<Integer> list = Arrays.asList(1,2,3,4);
         list.stream().map(data->CompletableFuture.supplyAsync(()->getNumber(data))).
-                map(compFuture->compFuture.thenApply(n->n+n)).map(t->t.join())
+                map(compFuture->compFuture.thenApply(n->n*0.001)).map(t->t.join())
                 .forEach(s->System.out.println(s));
     }
     private static int getNumber(int a){
@@ -19,8 +19,8 @@ public class CompletableFuture1Example {
     }
 }
 /*
-2
-4
-6
-8
+0.001
+0.002
+0.003
+0.004
  */
