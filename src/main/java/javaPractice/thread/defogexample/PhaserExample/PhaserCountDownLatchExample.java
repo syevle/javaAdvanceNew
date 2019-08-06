@@ -48,3 +48,9 @@ public class PhaserCountDownLatchExample {
     }
 
 }
+/*
+All service started.
+Started service : Cache Service
+Started service : DB Service
+Started service : Cassandra Service
+ */

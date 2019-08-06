@@ -48,3 +48,31 @@ public class PhaserCyclicBarrierExample {
     }
 
 }
+/*
+itin is waiting for other player.
+Ramdas is waiting for other player.
+Navnath is waiting for other player.
+All player start playing.
+Navnath start playing.
+Navnath is waiting for other player.
+Nitin start playing.
+Nitin is waiting for other player.
+Ramdas start playing.
+Ramdas is waiting for other player.
+Navnath start playing.
+Navnath is waiting for other player.
+Ramdas start playing.
+Ramdas is waiting for other player.
+Nitin start playing.
+Nitin is waiting for other player.
+Navnath start playing.
+Ramdas start playing.
+Ramdas is waiting for other player.
+Navnath is waiting for other player.
+Nitin start playing.
+Nitin is waiting for other player.
+Navnath start playing.
+Navnath is waiting for other player.
+Nitin start playing.
+Nitin is waiting for other player.
+ */
