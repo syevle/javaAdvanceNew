@@ -1,57 +1,59 @@
 package javaPractice.thread.defogexample.CountDownLatchExample;
 
+// link : https://nirajsonawane.github.io/2018/06/17/CountDownLatch/
+
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
+import java.util.stream.IntStream;
 
+class CountDownLatchWorker implements Runnable
+{
+    private CountDownLatch countDownLatch;
+    private int workerId;
+
+    public CountDownLatchWorker(CountDownLatch countDownLatch ,int workerId) {
+        this.countDownLatch=countDownLatch;
+        this.workerId=workerId;
+    }
+    @Override
+    public void run() {
+        System.out.println("Worker " + workerId + " Started" );
+        try {
+            Thread.sleep(workerId*1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Worker " + workerId + " Completed it's work, Reducing  count of countDownLatch " );
+        countDownLatch.countDown();
+    }
+}
 public class CountDownLatchExample {
-
-    public static void main(String args[]) throws InterruptedException {
-        CountDownLatch latch = new CountDownLatch(3);
-        ExecutorService threadPool = Executors.newFixedThreadPool(4);
-        //Creating shared object
-        threadPool.submit(new DependentSevice("Cache Service",1000,latch));
-        threadPool.submit(new DependentSevice("DB Service",2000,latch));
-        threadPool.submit(new DependentSevice("Cassandra Service",3000,latch));
-        System.out.println("Main Thread wait for other Service to complete has work");
-        latch.await(5, TimeUnit.SECONDS);
-        System.out.println("All service started. and main thread started");
-        threadPool.shutdown();
+    public static void main(String[] args) throws InterruptedException {
+        CountDownLatch countDownLatch = new CountDownLatch(5);
+        ExecutorService newCachedThreadPool = Executors.newCachedThreadPool();
+        IntStream.range(1, 6)
+                .forEach(cnt -> {
+                    newCachedThreadPool.submit(new CountDownLatchWorker(countDownLatch, cnt));
+                });
+        System.out.println("Main Thread is wating for workers to finish!!!!!!");
+        countDownLatch.await();
+        System.out.println("Work of All Worker is Completed");
+        newCachedThreadPool.shutdown();
     }
-
-    private static class DependentSevice implements Runnable{
-        private String seviceName;
-        private int serviceUpTime;
-        private CountDownLatch latch;
-        public DependentSevice(String seviceName,int serviceUpTime,CountDownLatch latch){
-            this.seviceName =seviceName;
-            this.serviceUpTime = serviceUpTime;
-            this.latch=latch;
-        }
-
-        @Override
-        public void run() {
-            longRunningSevice(serviceUpTime);
-            latch.countDown();
-            System.out.println("Started service : "+ seviceName);
-
-        }
-
-        private void longRunningSevice(int serviceUpTime) {
-            try {
-                Thread.sleep(serviceUpTime);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
 }
 /*
+        Worker 2 Started
+        Worker 1 Started
+        Worker 3 Started
+        Worker 4 Started
+        Main Thread is wating for workers to finish!!!!!!
+        Worker 5 Started
+        Worker 1 Completed it's work, Reducing  count of countDownLatch
+        Worker 2 Completed it's work, Reducing  count of countDownLatch
+        Worker 3 Completed it's work, Reducing  count of countDownLatch
+        Worker 4 Completed it's work, Reducing  count of countDownLatch
+        Worker 5 Completed it's work, Reducing  count of countDownLatch
+        Work of All Worker is Completed
 
-Started service : Cache Service
-Started service : DB Service
-Started service : Cassandra Service
-All service started.
  */
