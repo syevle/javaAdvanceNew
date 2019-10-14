@@ -1,4 +1,4 @@
-package javaPractice.thread.timeOutExecutor;
+package javaPractice.thread.defogexample.timeOutExecutor;
 
 import java.util.List;
 import java.util.concurrent.*;

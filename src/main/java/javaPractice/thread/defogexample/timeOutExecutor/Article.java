@@ -1,4 +1,4 @@
-package javaPractice.thread.timeOutExecutor;
+package javaPractice.thread.defogexample.timeOutExecutor;
 
 public class Article {
 
